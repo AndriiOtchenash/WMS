@@ -5,10 +5,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("wms")
 public class WMSController {
-    @GetMapping
-    public String hallo(){
+    @GetMapping ("wms")
+    public String greeting(){
         return "Hallo from WMSCotnroller";
     }
 }
