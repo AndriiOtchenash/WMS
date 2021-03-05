@@ -13,19 +13,16 @@ public class User {
   private Long id;
   private String firstName;
   private String lastName;
+  private String email;
+  private String password;
 
   protected User() {}
 
-  public User(String firstName, String lastName) {
+  public User(String firstName, String lastName, String email, String password) {
     this.firstName = firstName;
     this.lastName = lastName;
-  }
-
-  @Override
-  public String toString() {
-    return String.format(
-        "User[id=%d, firstName='%s', lastName='%s']",
-        id, firstName, lastName);
+    this.email = email;
+    this.password = password;
   }
 
   public Long getId() {
@@ -39,4 +36,13 @@ public class User {
   public String getLastName() {
     return lastName;
   }
+
+  public String getEmail() {
+    return email;
+  }
+
+  public String getPassword() {
+    return password;
+  }
 }
+

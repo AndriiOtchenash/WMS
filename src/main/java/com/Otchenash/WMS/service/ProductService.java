@@ -10,14 +10,32 @@ import java.util.Optional;
 
 @Service
 public class ProductService {
-    @Autowired
-    private ProductRepoisitory productRepoisitory;
 
-    public Optional<Product> findById(Long id) {
-        return productRepoisitory.findById( id );
+    private final ProductRepoisitory productRepoisitory;
+
+    @Autowired
+    public ProductService(ProductRepoisitory productRepoisitory) {
+        this.productRepoisitory = productRepoisitory;
     }
 
     public List<Product> findAll() {
         return productRepoisitory.findAll();
     }
+
+    public Optional<Product> findById(Long id) {
+        return productRepoisitory.findById( id );
+    }
+
+    public Product saveProduct(Product product) {
+        return productRepoisitory.save( product );
+    }
+
+    public void deleteProduct(Long id) {
+        productRepoisitory.deleteById( id );
+    }
+
+    public void deleteAll() {
+        productRepoisitory.deleteAll();
+    }
+
 }
