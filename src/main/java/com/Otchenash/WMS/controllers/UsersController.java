@@ -25,7 +25,7 @@ public class UsersController {
     }
 
     @PostMapping("users")
-    public User addUser(User user) {
+    public User addUser(@RequestBody User user) {
         logger.info("Creating: " + user);
         return userService.addUser( user );
     }
