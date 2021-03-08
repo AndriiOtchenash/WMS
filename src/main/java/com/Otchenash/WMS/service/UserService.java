@@ -24,12 +24,11 @@ public class UserService {
     }
 
     public List<User> showAllUsers() {
-        
         return userRepository.findAll();
     }
 
-    public void addUser(User user) {
-        userRepository.save( user );
+    public User addUser(User user) {
+        return userRepository.save( user );
     }
 
     public void deleteUser(Long id) {

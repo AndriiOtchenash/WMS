@@ -22,8 +22,8 @@ public class UsersController {
     }
 
     @PostMapping("users")
-    public void addUser(User user) {
-        userService.addUser( user );
+    public User addUser(User user) {
+        return userService.addUser( user );
     }
 
     @DeleteMapping("users/{id}")
