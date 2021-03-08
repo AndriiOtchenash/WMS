@@ -4,11 +4,14 @@ import com.Otchenash.WMS.entities.User;
 import com.Otchenash.WMS.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
 @RestController
-public class UsersController {
+public class UsersController { 
+    Logger logger = LoggerFactory.getLogger(LoggingController.class);
     private UserService userService;
 
     @Autowired
@@ -23,6 +26,7 @@ public class UsersController {
 
     @PostMapping("users")
     public User addUser(User user) {
+        logger.info(user);
         return userService.addUser( user );
     }
 
