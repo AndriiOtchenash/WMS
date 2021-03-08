@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 public class UsersController { 
-    Logger logger = LoggerFactory.getLogger(LoggingController.class);
+    Logger logger = LoggerFactory.getLogger(UsersController.class);
     private UserService userService;
 
     @Autowired
@@ -26,7 +26,7 @@ public class UsersController {
 
     @PostMapping("users")
     public User addUser(User user) {
-        logger.info(user);
+        logger.info("Creating: " + user);
         return userService.addUser( user );
     }
 
