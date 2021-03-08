@@ -14,7 +14,6 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-
 //    @GeneratedValue(generator = "sequence-generator")
 //    @GenericGenerator(
 //            name = "sequence-generator",
