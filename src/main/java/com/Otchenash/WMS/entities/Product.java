@@ -1,36 +1,27 @@
 package com.Otchenash.WMS.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import sun.util.calendar.BaseCalendar;
+
+import javax.persistence.*;
+import java.util.Date;
 
 @Entity
-/*@Table(uniqueConstraints={
-        @UniqueConstraint(columnNames = {"productId", "serial"})
-})*/
+@Table(uniqueConstraints={
+        @UniqueConstraint(columnNames = {"id", "supplier"})
+})
+
 public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-
     private Long id;
-    private Long userId;
-    private String name;
-    private String color;
-    private Enum type;
-
-/*    private int id;
 
     private String name;
-    private int weight;
     private String color;
+    @Enumerated(EnumType.ORDINAL)
+    private TypeOfProducts type;
     private String supplier;
-    private String brand;
-    private int price;
-
-    private Date createdDate;*/
-
+    private Date createdDate;
 
     public Product() {
     }
@@ -48,10 +39,6 @@ public class Product {
         return id;
     }
 
-    public Long getuserId() {
-        return userId;
-    }
-
     public String getName() {
         return name;
     }
@@ -60,7 +47,20 @@ public class Product {
         return color;
     }
 
-    public Enum getType() {
+    public TypeOfProducts getType() {
         return type;
     }
+
+    public String getSupplier() {
+        return supplier;
+    }
+
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    public Date getCreatedDate() {
+        return createdDate;
+    }
+
 }

@@ -5,6 +5,7 @@ import com.Otchenash.WMS.repositories.ProductRepoisitory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,6 +28,8 @@ public class ProductService {
     }
 
     public Product saveProduct(Product product) {
+        Date newCreatedDate = new Date(  );
+        product.setCreatedDate( newCreatedDate);
         return productRepoisitory.save( product );
     }
 

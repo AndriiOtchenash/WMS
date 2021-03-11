@@ -2,6 +2,9 @@ package com.Otchenash.WMS.controllers;
 
 import com.Otchenash.WMS.entities.Product;
 import com.Otchenash.WMS.service.ProductService;
+import com.Otchenash.WMS.service.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,6 +21,9 @@ public class ProductsController {
 
         this.productService = productService;
     }
+
+    Logger logger = LoggerFactory.getLogger(UsersController.class);
+    private UserService userService;
 
     @GetMapping("products")
     public List<Product> findAll() {
