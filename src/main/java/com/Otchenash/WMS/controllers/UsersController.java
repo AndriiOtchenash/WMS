@@ -1,11 +1,12 @@
 package com.Otchenash.WMS.controllers;
 
 import com.Otchenash.WMS.entities.User;
+import com.Otchenash.WMS.entities.UserDto;
 import com.Otchenash.WMS.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,12 +21,12 @@ public class UsersController {
     }
 
     @GetMapping("users")
-    public List<User> showAllUsers() {
+    public List<UserDto> showAllUsers() {
         return userService.showAllUsers();
     }
 
     @PostMapping("users")
-    public User addUser(@RequestBody User user) {
+    public UserDto addUser(@RequestBody User user) {
         logger.info("Creating: " + user);
         return userService.addUser( user );
     }
