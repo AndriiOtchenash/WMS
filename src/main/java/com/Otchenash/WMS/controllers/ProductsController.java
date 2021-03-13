@@ -43,12 +43,10 @@ public class ProductsController {
     @DeleteMapping("products/{id}")
     public void deleteProduct(@PathVariable("id") Long id) {
         productService.deleteProduct( id );
-
     }
     @DeleteMapping("products")
     public void deleteAll() {
         productService.deleteAll();
     }
-
 }
 

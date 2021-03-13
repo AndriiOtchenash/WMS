@@ -6,8 +6,8 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(uniqueConstraints={
-        @UniqueConstraint(columnNames = {"id", "supplier"})
+@Table(uniqueConstraints = {
+        @UniqueConstraint(columnNames = {"itemNumber", "supplier"})
 })
 
 public class Product {
@@ -22,6 +22,7 @@ public class Product {
     private TypeOfProducts type;
     private String supplier;
     private Date createdDate;
+    private String itemNumber;
 
     public Product() {
     }
@@ -32,6 +33,10 @@ public class Product {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", color='" + color + '\'' +
+                ", type=" + type +
+                ", supplier='" + supplier + '\'' +
+                ", createdDate=" + createdDate +
+                ", itemNumber='" + itemNumber + '\'' +
                 '}';
     }
 
@@ -63,4 +68,7 @@ public class Product {
         return createdDate;
     }
 
+    public String getItemNumber() {
+        return itemNumber;
+    }
 }
